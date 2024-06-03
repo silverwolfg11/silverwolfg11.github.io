@@ -1,6 +1,6 @@
 <script>
+    import { base } from '$app/paths'
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import Icon from "$lib/Icon.svelte";
 
     function getIconClass(path) {
@@ -15,9 +15,9 @@
 <!-- Nav -->
     {#key $page }
     <nav id="nav">
-        <a href="/" class={getIconClass("/")}><Icon name="home" width="parent" height="parent" fill="none" /><span>Home</span></a>
-        <a href="/about" class={getIconClass("/about")}><Icon name="glasses" width="parent" height="parent" fill="none" /><span>About</span></a>
-        <a href="/projects" class={getIconClass("/projects")}><Icon name="cupstar" width="parent" height="parent" fill="none" /><span>Projects</span></a>
+        <a href={ base + "/"} class={getIconClass("/")}><Icon name="home" width="parent" height="parent" fill="none" /><span>Home</span></a>
+        <a href={ base + "/about"} class={getIconClass("/about")}><Icon name="glasses" width="parent" height="parent" fill="none" /><span>About</span></a>
+        <a href={ base + "/projects"} class={getIconClass("/projects")}><Icon name="cupstar" width="parent" height="parent" fill="none" /><span>Projects</span></a>
     </nav>
     {/key}
 
